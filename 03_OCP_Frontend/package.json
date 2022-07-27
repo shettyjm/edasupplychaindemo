@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "buildnoconfig": "ng build",
+    "build": "ng build",
     "config": "ts-node ./src/scripts/setenv.ts",
-    "build": "npm run config --environment=prod && ng build",
+    "buildconfig": "npm run config --environment=prod && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
