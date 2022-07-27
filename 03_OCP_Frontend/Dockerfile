@@ -13,12 +13,12 @@ FROM nginx:stable
 # RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
 #     chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
  
-RUN ls -ltra /usr/src/app
-COPY /usr/src/app/dist/rpdlogistica  /usr/share/nginx/html
-COPY /usr/src/app/start-nginx.sh /usr/bin/start-nginx.sh
-COPY /usr/src/app/nginx.conf /etc/nginx/conf.d/
 
-RUN ls -ltra
+COPY --from=build /usr/src/app/dist/rpdlogistica  /usr/share/nginx/html
+COPY start-nginx.sh /usr/bin/start-nginx.sh
+COPY nginx.conf /etc/nginx/conf.d/
+
+RUN ls -ltra /usr/src
 RUN chmod +x /usr/bin/start-nginx.sh
 
 WORKDIR /usr/share/nginx/html
