@@ -14,6 +14,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 https://github.com/shettyjm/edasupplychaindemo \
 --context-dir 03_OCP_Frontend
 
+   oc logs -f buildconfig/scdemofeapp
+
+   oc expose service/scdemofeapp 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
