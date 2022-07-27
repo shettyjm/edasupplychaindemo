@@ -18,6 +18,10 @@ https://github.com/shettyjm/edasupplychaindemo \
 
    oc expose service/scdemofeapp 
 
+3. Launch the FE application using the `Topology` side menu, route option.
+   Click on the `Login` button on the UI application.
+   Login credentials `orderadmin/password`
+
 
 ## Development server
 
