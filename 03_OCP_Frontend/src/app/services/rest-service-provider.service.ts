@@ -23,9 +23,9 @@ export class RestServiceProviderService {
   //.set('Access-Control-Allow-Origin', '*');
 
   constructor(private http: HttpClient) {
-    this.rootURL = environment.threescaleApiUrl;
-    // this.cityRootUrl = environment.threescaleApiCityUrl;
-    this.orderBackendUrl = environment.orderBackendUrl;
+    this.rootURL = environment.SUPPORT_API_URL;
+   
+    this.orderBackendUrl = environment.ORDER_API_URL;
     //" http://localhost:3000"
 
 
