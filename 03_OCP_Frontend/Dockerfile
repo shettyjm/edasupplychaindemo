@@ -1,3 +1,11 @@
+### STAGE 1: Build ###
+FROM node:12.7-alpine AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
 FROM nginx:stable
 
 # Copy the build output to replace the default nginx contents.
@@ -6,7 +14,7 @@ FROM nginx:stable
 #     chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
  
 RUN ls -ltra
-COPY ./dist/wow-logistica  /usr/share/nginx/html
+COPY ./dist/rpdlogistica  /usr/share/nginx/html
 COPY ./start-nginx.sh /usr/bin/start-nginx.sh
 COPY nginx.conf /etc/nginx/conf.d/
 
