@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run buildnoconfig
+RUN npm run build
 RUN cat ./src/environments/environment.ts
 
 FROM nginx:stable
