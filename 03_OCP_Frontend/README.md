@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
-# Build and Deploy onto OpenShift Cluster
+# Build and Deploy to OpenShift Cluster
 
  1. Create a new project for the application.
 
