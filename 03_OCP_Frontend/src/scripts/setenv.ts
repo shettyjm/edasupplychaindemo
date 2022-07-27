@@ -13,7 +13,7 @@ const targetPath = isProduction
 const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
-   SUPPORT_API_URL: "${process.env['SUPPORT_API_URL']}",
+   BACKEND_API_URL: "${process.env['BACKEND_API_URL']}",
    ORDER_API_URL: "${process.env['ORDER_API_URL']}"
 };
 `;

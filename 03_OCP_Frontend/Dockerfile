@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run buildnoconfig
 RUN cat ./src/environments/environment.ts
 
 FROM nginx:stable
@@ -25,7 +25,7 @@ RUN chmod +x /usr/bin/start-nginx.sh
 WORKDIR /usr/share/nginx/html
 
 #openshift
-#RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html/assets/env.js /usr/share/nginx/html/assets/env.template.js
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html/assets/env.js /usr/share/nginx/html/assets/env.template.js
 RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx 
 
 RUN sed -i.bak 's/listen\(.*\)80;/listen 8081;/' /etc/nginx/conf.d/default.conf

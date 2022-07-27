@@ -9,6 +9,6 @@ JSFOLDER=/usr/share/nginx/html/assets
 templatefile=$JSFOLDER/env.template.js
 envfile=$JSFOLDER/env.js
 cat $templatefile | envsubst $EXISTING_VARS | tee $envfile 
-cat $templatefile
-cat $envfile
+ehco "template file after substitution" | cat $templatefile
+ehco "env file for consumption"| cat $envfile
 nginx -g 'daemon off;'

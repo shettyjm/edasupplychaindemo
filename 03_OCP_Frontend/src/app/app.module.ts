@@ -44,3 +44,11 @@ import { SupplierComponent } from './components/supplier/supplier.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+declare global {
+  interface Window {
+ 
+    API_GW_URL?:any;
+    BACKEND_SC_API_URL?:any;
+  }
+}
