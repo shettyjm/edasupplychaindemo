@@ -1,6 +1,18 @@
-# WowLogistica
+# RPDLogistica
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+
+# Build and Deploy onto OpenShift Cluster
+
+ 1. Create a new project for the application.
+
+  E.g 
+
+   oc new-project scdemoproject
+
+ 2. oc new-app --name scdemofeapp \
+https://github.com/shettyjm/edasupplychaindemo \
+--context-dir 03_OCP_Frontend
 
 ## Development server
 
