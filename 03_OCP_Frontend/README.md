@@ -10,15 +10,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
    oc new-project scdemoproject
 
- 2. oc new-app --name scdemofeapp \
-https://github.com/shettyjm/edasupplychaindemo \
---context-dir 03_OCP_Frontend
+ 2. oc new-app --name scdemofeapp  https://github.com/shettyjm/edasupplychaindemo  --context-dir 03_OCP_Frontend
+    
+    oc logs -f buildconfig/scdemofeapp
+    
+    oc expose service/scdemofeapp 
+    
+    oc get deployment
+    
+    oc set env deployment/scdemofeapp BACKEND_SC_API_URL="https://quarkus-kafka-quarkus-test.apps.rosa-xxx.xxx.xx.openshiftapps.com"
 
-   oc logs -f buildconfig/scdemofeapp
-
-   oc expose service/scdemofeapp 
-
-3. Launch the FE application using the `Topology` side menu, route option.
+3. Launch  FE application using the `Topology` side menu, route option.
    Click on the `Login` button on the UI application.
    Login credentials `orderadmin/password`
 
